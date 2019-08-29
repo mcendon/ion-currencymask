@@ -8,7 +8,7 @@
 To install ,ion-currencymask run:
 
 ```bash
-$ npm install @mcendon/ion-currencymask --save
+$ npm install @mcorg/ion-currencymask --save
 ```
 
 ## Consuming your library
@@ -23,7 +23,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 
 // Import the library
-import { IonCurrencyMaskModule } from '@mcendon/ion-currencymask';
+import { IonCurrencyMaskModule } from '@mcorg/ion-currencymask';
 
 @NgModule({
   declarations: [

@@ -1,20 +1,20 @@
 {
-  "name": "@pluritech/ion-currencymask",
+  "name": "@mcorg/ion-currencymask",
   "version": "1.0.4",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pluritech/ion-currencymask"
+    "url": "https://github.com/mcendon/ion-currencymask"
   },
   "author": {
-    "name": "Lucas Correa",
-    "email": "lucasccorrea@gmail.com"
+    "name": "Mauro Cendón",
+    "email": "mau.cendon@gmail.com"
   },
   "keywords": [
     "angular"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Pluritech/ion-currencymask/issues"
+    "url": "https://github.com/mcendon/ion-currencymask/issues"
   },
   "main": "ion-currencymask.umd.js",
   "module": "ion-currencymask.js",

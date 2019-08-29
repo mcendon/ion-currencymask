@@ -1,5 +1,5 @@
 {
-  "name": "@mcendon/ion-currencymask",
+  "name": "@mcorg/ion-currencymask",
   "version": "1.0.4",
   "scripts": {
     "build": "gulp build",
