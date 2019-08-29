@@ -89,6 +89,7 @@ export class HomePage {
 | clearInput    | boolean  | **true** to add clearInput on ion-input. **Default: false** without clearInput . More info: [Ionic Doc - Input](https://ionicframework.com/docs/api/components/input/Input/) |
 | lastChild     | boolean  | if the ion-currency-mask is the last of ion-list send **true**, **Default: false**       |
 | disabled      | boolean  | **true** to disabled the input. **Default: false**       |
+| noDecimals      | boolean  | **true** to disable decimals. **Default: false**       |
 
 ## To do?
 
