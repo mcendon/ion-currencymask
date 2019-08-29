@@ -21,6 +21,7 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
   @Input() clearInput = false;
   @Input() lastChild = false;
   @Input() disabled = false;
+  @Input() noDecimals = false;
 
   public valueIonInput: string;
 
@@ -57,7 +58,7 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
   }
 
   public keyUpEvent(event) {
-    this.valueIonInput = this.currencyMask.detectAmount(this.valueIonInput);
+    this.valueIonInput = this.currencyMask.detectAmount(this.valueIonInput, this.noDecimals);
     this.onChange(event);
   }
 

@@ -34,7 +34,7 @@
     "@angular/forms": "^4.3.6",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
-    "@compodoc/compodoc": "^1.0.0-beta.10",
+    "@compodoc/compodoc": "^1.1.10",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
