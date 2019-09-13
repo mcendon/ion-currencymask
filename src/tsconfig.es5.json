@@ -22,7 +22,7 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "ion-currencymask.js",
-    "flatModuleId": "@pluritech/ion-currencymask"
+    "flatModuleId": "@mcorg/ion-currencymask"
   },
   "files": [
     "./index.ts"

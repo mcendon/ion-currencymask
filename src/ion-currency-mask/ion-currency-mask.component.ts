@@ -22,8 +22,10 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
   @Input() lastChild = false;
   @Input() disabled = false;
   @Input() noDecimals = false;
+  @Input() reverse = false;
 
   public valueIonInput: string;
+  public valueIonInputReverse: string;
 
   private currencyMask = new CurrencyMask();
   private value: number;
@@ -35,7 +37,7 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
   public registerOnTouched() {}
 
   public writeValue(obj: number) {
-    this.valueIonInput = this.currencyMask.detectAmountReverse(obj);
+    this.valueIonInput = this.currencyMask.detectAmountReverse(obj, this.reverse);
     if (obj) {
       this.keyUpEvent(null);
       this.value = obj;
@@ -50,7 +52,7 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
 
   public onChange(event) {
     if (this.valueIonInput) {
-      this.value = Number.parseFloat(this.valueIonInput.replace(/[\.]/g, '').replace(/[,]/g, '.'));
+      this.value = this.reverse ? Number.parseFloat(this.valueIonInputReverse.replace(/[\,]/g, '')) : Number.parseFloat(this.valueIonInput.replace(/[\.]/g, '').replace(/[,]/g, '.'));
     } else {
       this.value = null;
     }
@@ -59,6 +61,9 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
 
   public keyUpEvent(event) {
     this.valueIonInput = this.currencyMask.detectAmount(this.valueIonInput, this.noDecimals);
+    if (this.valueIonInput && this.reverse) {
+      this.valueIonInputReverse = this.valueIonInput.replace(/(\.)/g, '|').replace(/(\,)/g, '.').replace(/(\|)/g, ',');
+    }
     this.onChange(event);
   }
 

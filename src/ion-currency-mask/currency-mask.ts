@@ -2,9 +2,9 @@ export class CurrencyMask {
     private n: any;
     private len: any;
 
-    public detectAmountReverse(v: any): string {
+    public detectAmountReverse(v: any, r: boolean): string {
         if (typeof(v) === 'number') {
-            return this.fixAmountReverse(v);
+            return this.fixAmountReverse(v, r);
         }
         return v;
      }
@@ -21,8 +21,8 @@ export class CurrencyMask {
         }
     }
 
-    private fixAmountReverse(a: number) {
-        return a.toFixed(2).replace('.', ',');
+    private fixAmountReverse(a: number, r: boolean) {
+        return a.toFixed(2).replace(r ? ',' : '.', r ? '.' : ',');
     }
 
     private fixAmount(a: string): string {
