@@ -7,7 +7,7 @@ export class CurrencyMask {
             return this.fixAmountReverse(v, r);
         }
         return v;
-     }
+    }
 
     public detectAmount(v, nd): string {
         if (v) {

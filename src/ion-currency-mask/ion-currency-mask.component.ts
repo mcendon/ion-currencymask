@@ -25,7 +25,6 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
   @Input() reverse = false;
 
   public valueIonInput: string;
-  public valueIonInputReverse: string;
 
   private currencyMask = new CurrencyMask();
   private value: number;
@@ -52,7 +51,7 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
 
   public onChange(event) {
     if (this.valueIonInput) {
-      this.value = this.reverse ? Number.parseFloat(this.valueIonInputReverse.replace(/[\,]/g, '')) : Number.parseFloat(this.valueIonInput.replace(/[\.]/g, '').replace(/[,]/g, '.'));
+      this.value = this.reverse ? Number.parseFloat(this.valueIonInput.replace(/[\,]/g, '')) : Number.parseFloat(this.valueIonInput.replace(/[\.]/g, '').replace(/[,]/g, '.'));
     } else {
       this.value = null;
     }
@@ -60,9 +59,10 @@ export class IonCurrencyMaskComponent implements ControlValueAccessor {
   }
 
   public keyUpEvent(event) {
-    this.valueIonInput = this.currencyMask.detectAmount(this.valueIonInput, this.noDecimals);
+    const valueToPass = this.reverse ? this.valueIonInput.replace(/(\,)/g, '|').replace(/(\.)/g, ',').replace(/(\|)/g, '.') : this.valueIonInput;
+    this.valueIonInput = this.currencyMask.detectAmount(valueToPass, this.noDecimals);
     if (this.valueIonInput && this.reverse) {
-      this.valueIonInputReverse = this.valueIonInput.replace(/(\.)/g, '|').replace(/(\,)/g, '.').replace(/(\|)/g, ',');
+      this.valueIonInput = this.valueIonInput.replace(/(\.)/g, '|').replace(/(\,)/g, '.').replace(/(\|)/g, ',');
     }
     this.onChange(event);
   }
